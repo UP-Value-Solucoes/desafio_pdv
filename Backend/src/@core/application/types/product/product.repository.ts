@@ -6,3 +6,5 @@ export type TUpadateProductData = Partial<TCreateProductInput>;
 
 export type TReadListProduct = TCreateProductInput[];
 
+export type TReadProductById = ProductModel;
+
