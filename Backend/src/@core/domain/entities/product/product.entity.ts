@@ -1,6 +1,7 @@
 import { ProductProps } from "../../../../shared/models/product/product.model";
 
 export class Product {
+    props: any;
     constructor(private productProps: ProductProps){};
 
     getId(){
@@ -18,4 +19,8 @@ export class Product {
     getStock(){
         return this.productProps.stock;
     };
+
+    toJSON(){
+        return this.props;
+    }
 };
