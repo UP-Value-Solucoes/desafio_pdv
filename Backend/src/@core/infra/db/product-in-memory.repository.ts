@@ -1,3 +1,4 @@
+import { TReadListProduct } from "../../application/types/product/product.repository";
 import { Product } from "../../domain/entities/product/product.entity";
 import { ProductRepositoryInterface } from "../../domain/repositories/product/product.repository";
 
@@ -7,7 +8,7 @@ export class ProductInMemoryRepository implements ProductRepositoryInterface {
     this.items.push(product);
   };
 
-  async findAll(): Promise<Product[]> {
-    return this.items;
+  async findAll(): Promise<TReadListProduct> {
+    return this.findAll();
   };
 };
