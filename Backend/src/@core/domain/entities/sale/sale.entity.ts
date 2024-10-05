@@ -1,5 +1,4 @@
 import { SaleProps } from "../../../../shared/models/sale/sale.model";
-import { Product } from "../product/product.entity";
 
 export class Sale {
     constructor(private saleProps : SaleProps){};
