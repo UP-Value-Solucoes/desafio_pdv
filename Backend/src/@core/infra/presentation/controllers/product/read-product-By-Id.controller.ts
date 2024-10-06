@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { TReadProductById } from "../../../../application/types/product/product.repository";
 import { ReadProductByIdUseCase } from "../../../../application/use_case/product/read-product-id.use_case";
 
-export class ReadProductById{
+export class ReadProductByIdController{
     constructor(private readProductById: ReadProductByIdUseCase){};
 
     async getProductById(req: Request, res:Response): Promise<Response>{

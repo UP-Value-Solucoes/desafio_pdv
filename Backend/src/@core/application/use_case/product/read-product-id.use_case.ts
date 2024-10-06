@@ -1,4 +1,4 @@
-import { ProductRepositoryInterface } from "../../../domain/repositories/product/product.repository";
+import ProductRepositoryInterface from "../../../domain/repositories/product/product.repository";
 import { TReadProductById } from "../../types/product/product.repository";
 
 export class ReadProductByIdUseCase {

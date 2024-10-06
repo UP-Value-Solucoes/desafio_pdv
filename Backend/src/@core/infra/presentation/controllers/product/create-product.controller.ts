@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { CreateProductUseCase } from "../../../../application/use_case/product/create-product.use_case";
 import { TCreateProductInput } from "../../../../application/types/product/product.repository";
 
-export class ProductController {
+export class CreateProductController {
     constructor(private createProductRepo: CreateProductUseCase){};
 
     async createProduct(req: Request, res: Response): Promise<Response> {
