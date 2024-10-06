@@ -5,4 +5,4 @@ export const App = express();
 
 App.use(json());
 
-App.use("/api/products", productRouter);
+App.use("/products", productRouter);

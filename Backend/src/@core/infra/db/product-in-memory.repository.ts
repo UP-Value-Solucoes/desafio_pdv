@@ -4,15 +4,17 @@ import ProductRepositoryInterface from "../../domain/repositories/product/produc
 
 export class ProductInMemoryRepository implements ProductRepositoryInterface {
   items: Product[] = [];
+  
   async insert(product: Product): Promise<void> {
     this.items.push(product);
   };
 
   async findAll(): Promise<TReadListProduct> {
-    return this.findAll();
+    return this.items.map(item => item.toJSON());
   };
 
   async findById(productId: string): Promise<TReadProductById | null> {
-    return this.findById(productId);
+    const product = this.items.find(item => item.getId() === productId);
+    return product ? product.toJSON() : null;
   };
 };

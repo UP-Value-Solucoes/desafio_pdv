@@ -6,9 +6,11 @@ export class ReadProductByIdUseCase {
 
     async execute(productId: string): Promise<TReadProductById | null>{
         const product: TReadProductById | null = await this.productRepo.findById(productId);
+        
         if(!product){
             throw new Error("Product not found.")
         }
+
         return product;
     };
 };
