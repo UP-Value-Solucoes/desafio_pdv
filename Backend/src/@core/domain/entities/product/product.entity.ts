@@ -1,4 +1,4 @@
-import { ProductModel } from "../../../../@core/infra/db/models/product.model"
+import { ProductModel } from "../../../infra/db/models/product/product.model"
 
 export class Product {
     public readonly id: string;

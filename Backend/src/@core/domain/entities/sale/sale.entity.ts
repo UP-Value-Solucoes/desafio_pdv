@@ -1,19 +1,21 @@
-// export class Sale {
-//     constructor(private saleProps : SaleProps){};
+import { SalesModel } from "../../../infra/db/models/sale/sale.model";
 
-//     getId(){
-//         return this.saleProps.id;
-//     };
+export class Sale {
+    constructor(private saleProps : SalesModel){};
 
-//     getProducts(){
-//         return this.saleProps.product;
-//     };
+    getId(){
+        return this.saleProps.id;
+    };
 
-//     getAmount(){
-//         return this.saleProps.amount;
-//     };
+    getProductsId(){
+        return this.saleProps.productId;
+    };
 
-//     getTotal(){
-//         return this.saleProps.total;
-//     };
-// };  
+    getQuantity(){
+        return this.saleProps.quantity;
+    };
+
+    getTotal(){
+        return this.saleProps.total;
+    };
+};  

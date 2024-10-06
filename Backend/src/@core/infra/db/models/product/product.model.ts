@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import "reflect-metadata";
 
 @Entity("products")
 export class ProductModel {

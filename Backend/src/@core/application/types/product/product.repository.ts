@@ -1,4 +1,4 @@
-import { ProductModel } from "../../../infra/db/models/product.model";
+import { ProductModel } from "../../../infra/db/models/product/product.model";
 
 export type TCreateProductInput = Pick<ProductModel, "name" | "price" | "stock">;
 
