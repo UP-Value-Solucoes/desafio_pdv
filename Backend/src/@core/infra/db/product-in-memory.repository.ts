@@ -1,6 +1,7 @@
 import { TReadListProduct, TReadProductById } from "../../application/types/product/product.repository";
 import { Product } from "../../domain/entities/product/product.entity";
 import ProductRepositoryInterface from "../../domain/repositories/product/product.repository";
+import { ProductModel } from "./models/product/product.model";
 
 export class ProductInMemoryRepository implements ProductRepositoryInterface {
   items: Product[] = [];
@@ -17,4 +18,5 @@ export class ProductInMemoryRepository implements ProductRepositoryInterface {
     const product = this.items.find(item => item.getId() === productId);
     return product ? product.toJSON() : null;
   };
+
 };

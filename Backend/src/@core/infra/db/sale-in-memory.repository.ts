@@ -4,8 +4,11 @@ import SaleRepositoryInterface from "../../domain/repositories/sale/sale.reposit
 export class SaleInMemoryRepository implements SaleRepositoryInterface {
     sales: Sale[] = [];
 
+    async insert(sales: Sale): Promise<Sale> {
+        return await this.insert(sales);
+    };
 
-    save(sale: Sale): Promise<void> {
-        throw new Error("Method not implemented.");
+    async save(sale: Sale): Promise<void> {
+       this.sales.push(sale);
     };
 };

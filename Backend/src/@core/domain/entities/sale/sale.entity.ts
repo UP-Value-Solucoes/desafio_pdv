@@ -4,7 +4,7 @@ export class Sale {
     public readonly id: string;
     public props: Omit<SalesModel, "id">;
     constructor(private saleProps : SalesModel){
-        this.id = this.saleProps.id || saleProps.id || crypto.randomUUID(); 
+        this.id = this.saleProps.id;
         const { id: removedId, ...rest } = saleProps;
         this.props = rest;
     };

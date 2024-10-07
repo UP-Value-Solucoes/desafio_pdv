@@ -6,3 +6,4 @@ export const App = express();
 App.use(json());
 
 App.use("/products", productRouter);
+// App.use("/sale", saleRouter);
