@@ -2,7 +2,6 @@ import { Product } from "../../../domain/entities/product/product.entity";
 import { Sale } from "../../../domain/entities/sale/sale.entity";
 import ProductRepositoryInterface from "../../../domain/repositories/product/product.repository";
 import SaleRepositoryInterface from "../../../domain/repositories/sale/sale.repository";
-import { ProductModel } from "../../../infra/db/models/product/product.model";
 import { TReadSaleById } from "../../types/sale/sale.repository";
 
 export class CreateSaleUseCase {
