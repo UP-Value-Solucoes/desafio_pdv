@@ -1,12 +1,14 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { ProductModel } from "../product/product.model";
 
 @Entity("sales")
 export class SalesModel {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column()
-    productId: string;
+    @ManyToOne(() => ProductModel)
+    @JoinColumn({name: "productId"})
+    productId: ProductModel;
 
     @Column()
     quantity: number;
@@ -14,7 +16,7 @@ export class SalesModel {
     @Column()
     total: number;
 
-    constructor(id:string, productId: string, quantity: number, total: number){
+    constructor(id:string, productId: ProductModel, quantity: number, total: number){
         this.id = id;
         this.productId = productId;
         this.quantity = quantity;
