@@ -1,10 +1,16 @@
 import { SalesModel } from "../../../infra/db/models/sale/sale.model";
 
 export class Sale {
-    constructor(private saleProps : SalesModel){};
+    public readonly id: string;
+    public props: Omit<SalesModel, "id">;
+    constructor(private saleProps : SalesModel){
+        this.id = this.saleProps.id || saleProps.id || crypto.randomUUID(); 
+        const { id: removedId, ...rest } = saleProps;
+        this.props = rest;
+    };
 
     getId(){
-        return this.saleProps.id;
+        return this.id;
     };
 
     getProductsId(){
@@ -18,4 +24,11 @@ export class Sale {
     getTotal(){
         return this.saleProps.total;
     };
+
+    toJSON(){
+        return {
+            id: this.id,
+            ...this.props,
+        };
+    }
 };  
