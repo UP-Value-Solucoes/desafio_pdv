@@ -29,7 +29,7 @@ export class CreateSaleUseCase {
 
         await this.saleRepo.save(sale);
         product.props.stock -= quantity;
-        await this.productRepo.insert(product);
+        await this.productRepo.save(product);
         return sale.toJSON();
     };
     generateId(): string {
