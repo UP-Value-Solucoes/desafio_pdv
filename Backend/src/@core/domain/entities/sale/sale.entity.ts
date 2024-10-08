@@ -1,22 +1,34 @@
-import { SaleProps } from "../../../../shared/models/sale/sale.model";
-import { Product } from "../product/product.entity";
+import { SalesModel } from "../../../infra/db/models/sale/sale.model";
 
 export class Sale {
-    constructor(private saleProps : SaleProps){};
+    public readonly id: string;
+    public props: Omit<SalesModel, "id">;
+    constructor(private saleProps : SalesModel){
+        this.id = this.saleProps.id;
+        const { id: removedId, ...rest } = saleProps;
+        this.props = rest;
+    };
 
     getId(){
-        return this.saleProps.id;
+        return this.id;
     };
 
-    getProducts(){
-        return this.saleProps.product;
+    getProductsId(){
+        return this.saleProps.productId;
     };
 
-    getAmount(){
-        return this.saleProps.amount;
+    getQuantity(){
+        return this.saleProps.quantity;
     };
 
     getTotal(){
         return this.saleProps.total;
     };
+
+    toJSON(){
+        return {
+            id: this.id,
+            ...this.props,
+        };
+    }
 };  
